@@ -1,0 +1,17 @@
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\Registering Work.csproj.AssemblyReference.cache
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\Registering Work.csproj.GenerateResource.cache
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\Registering Work.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\Registering Work.AssemblyInfoInputs.cache
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\Registering Work.AssemblyInfo.cs
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\Registering Work.csproj.CoreCompileInputs.cache
+C:\Users\fragi\source\repos\Registering Work\Registering Work\bin\Debug\net7.0-windows\Registering Work.exe
+C:\Users\fragi\source\repos\Registering Work\Registering Work\bin\Debug\net7.0-windows\Registering Work.deps.json
+C:\Users\fragi\source\repos\Registering Work\Registering Work\bin\Debug\net7.0-windows\Registering Work.runtimeconfig.json
+C:\Users\fragi\source\repos\Registering Work\Registering Work\bin\Debug\net7.0-windows\Registering Work.dll
+C:\Users\fragi\source\repos\Registering Work\Registering Work\bin\Debug\net7.0-windows\Registering Work.pdb
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\Registering Work.dll
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\refint\Registering Work.dll
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\Registering Work.pdb
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\Registering Work.genruntimeconfig.cache
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\ref\Registering Work.dll
+C:\Users\fragi\source\repos\Registering Work\Registering Work\obj\Debug\net7.0-windows\NameListApp.AddableValues.resources
