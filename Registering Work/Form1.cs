@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
+using Registering_Work;
 
 namespace NameListApp
 {
@@ -24,6 +25,7 @@ namespace NameListApp
     }
     public partial class Form1 : Form
     {
+        private AddableValues Data;
         private List<listJson> list;
         private Panel nameListPanel;
         //
@@ -41,6 +43,21 @@ namespace NameListApp
         {
             InitializeComponent();
             InitializeUI();
+        }
+        public void UpdateInfo()
+        {
+            MessageBox.Show(JsonSerializer.Serialize(Data));
+            if (Data != null)
+            {
+                foreach (var parts in list)
+                {
+                    if (Data.Id == parts.All.Id)
+                    {
+                        parts.All = Data;
+                        MessageBox.Show("Works");
+                    }
+                }
+            }
         }
 
         private void InitializeUI()
@@ -144,18 +161,6 @@ namespace NameListApp
             nameListPanel.Controls.Add(addNameButton);
         }
 
-        private EventHandler SendRest(AddableValues rest)
-        {
-            var name = rest.Name;
-            var address = rest.Address;
-            var phonenumber = rest.Phonenumber;
-            var email = rest.Email;
-            var workflow = rest.Workflow;
-
-            MessageBox.Show($"You clicked on {name}");
-            throw new NotImplementedException();
-        }
-
         private void BackButton_Click(object sender, EventArgs e)
         {
             nameListPanel.Visible = true;
@@ -170,7 +175,10 @@ namespace NameListApp
         private void NameLabel_Click(object sender, EventArgs e)
         {
             Label nameLabel = (Label)sender;
-            MessageBox.Show($"You clicked on {nameLabel.Name}");
+            // MessageBox.Show($"You clicked on {nameLabel.Name}");
+            Form2 form2 = new Form2(nameLabel.Name); // Create an instance of Form2
+            form2.CallMyFunction = UpdateInfo;
+            form2.Show();
         }
         
 
