@@ -22,6 +22,7 @@ namespace Registering_Work
         public AddableValues Data { get; set; }
         public delegate void MyFunctionDelegate();
         public MyFunctionDelegate CallMyFunction;
+        public Action<AddableValues> CallMyActionFunction { get; set; }
 
         public Form2(string labelText)
         {
@@ -34,18 +35,27 @@ namespace Registering_Work
             textBox4.Text = All.Email;
             textBox5.Text = All.Workflow;
         }
-        private void CallMyFunctionFromForm2()
+        private void CallMyFunctionFromForm2(AddableValues Data)
         {
             if (CallMyFunction != null)
             {
                 CallMyFunction.Invoke();
             }
+            if (CallMyActionFunction != null)
+            {
+                CallMyActionFunction.Invoke(Data);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            All.Name = textBox1.Text;
+            All.Address = textBox2.Text;
+            All.Phonenumber = textBox3.Text;
+            All.Email = textBox4.Text;
+            All.Workflow = textBox5.Text;
             Data = All; // Assign the data to the Data property
-            CallMyFunctionFromForm2();
+            CallMyFunctionFromForm2(Data);
             this.Close(); // Close Form2
         }
 

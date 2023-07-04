@@ -39,22 +39,31 @@ namespace NameListApp
         //
         private Button addButton;
 
+        private Label nameLabel;
+
         public Form1()
         {
             InitializeComponent();
             InitializeUI();
         }
-        public void UpdateInfo()
+        public void UpdateInfo() { }
+        public void UpdateInfoAction(AddableValues Data)
         {
             MessageBox.Show(JsonSerializer.Serialize(Data));
             if (Data != null)
             {
-                foreach (var parts in list)
+                for (int i = 0; i < list.Count; i++)
                 {
+                    var parts = list[i];
                     if (Data.Id == parts.All.Id)
                     {
                         parts.All = Data;
-                        MessageBox.Show("Works");
+                        if (nameLabel!= null)
+                        {
+                            nameLabel.Text = parts.All.Name;
+                            MessageBox.Show(nameLabel.Text);
+                            nameLabel.AccessibleName= JsonSerializer.Serialize(parts.All);
+                        }
                     }
                 }
             }
@@ -141,9 +150,9 @@ namespace NameListApp
             int y = 50;
             foreach (var parts in list)
             {
-                Label nameLabel = new Label();
+                nameLabel = new Label();
                 nameLabel.Text = parts.All.Name;
-                nameLabel.Name = JsonSerializer.Serialize(parts.All);
+                nameLabel.AccessibleName = JsonSerializer.Serialize(parts.All);
                 nameLabel.Location = new Point(100, y);
                 nameLabel.ForeColor = Color.Blue;
                 nameLabel.Cursor = Cursors.Hand;
@@ -174,10 +183,11 @@ namespace NameListApp
 
         private void NameLabel_Click(object sender, EventArgs e)
         {
-            Label nameLabel = (Label)sender;
-            // MessageBox.Show($"You clicked on {nameLabel.Name}");
-            Form2 form2 = new Form2(nameLabel.Name); // Create an instance of Form2
-            form2.CallMyFunction = UpdateInfo;
+            nameLabel = (Label)sender;
+            MessageBox.Show($"You clicked on {nameLabel.AccessibleName}");
+            Form2 form2 = new Form2(nameLabel.AccessibleName); // Create an instance of Form2
+            //form2.CallMyFunction = UpdateInfo;
+            form2.CallMyActionFunction = UpdateInfoAction;
             form2.Show();
         }
         
@@ -215,9 +225,9 @@ namespace NameListApp
                 };
 
                 list.Add(listjson);
-                Label nameLabel = new Label();
+                nameLabel = new Label();
                 nameLabel.Text = newName;
-                nameLabel.Name = JsonSerializer.Serialize(listjson.All);
+                nameLabel.AccessibleName = JsonSerializer.Serialize(listjson.All);
                 nameLabel.Location = new Point(100, nameListPanel.Controls.Count * 30 + 50);
                 nameLabel.ForeColor = Color.Blue;
                 nameLabel.Cursor = Cursors.Hand;
