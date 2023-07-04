@@ -49,7 +49,7 @@ namespace NameListApp
         public void UpdateInfo() { }
         public void UpdateInfoAction(AddableValues Data)
         {
-            MessageBox.Show(JsonSerializer.Serialize(Data));
+            //MessageBox.Show(JsonSerializer.Serialize(Data));
             if (Data != null)
             {
                 for (int i = 0; i < list.Count; i++)
@@ -61,7 +61,7 @@ namespace NameListApp
                         if (nameLabel!= null)
                         {
                             nameLabel.Text = parts.All.Name;
-                            MessageBox.Show(nameLabel.Text);
+                            //MessageBox.Show(nameLabel.Text);
                             nameLabel.AccessibleName= JsonSerializer.Serialize(parts.All);
                         }
                     }
@@ -184,7 +184,7 @@ namespace NameListApp
         private void NameLabel_Click(object sender, EventArgs e)
         {
             nameLabel = (Label)sender;
-            MessageBox.Show($"You clicked on {nameLabel.AccessibleName}");
+            //MessageBox.Show($"You clicked on {nameLabel.AccessibleName}");
             Form2 form2 = new Form2(nameLabel.AccessibleName); // Create an instance of Form2
             //form2.CallMyFunction = UpdateInfo;
             form2.CallMyActionFunction = UpdateInfoAction;
